@@ -1,7 +1,9 @@
-import ValuesController from "./Controllers/ValuesController.js";
+import MyPCController from "./Controllers/myPCController.js"
+import PokedexController from "./Controllers/pokedexController.js"
 
 class App {
-  valuesController = new ValuesController();
+  pokedexController = new PokedexController()
+  myPCController = new MyPCController()
 }
 
-window["app"] = new App();
+window["app"] = new App()
