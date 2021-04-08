@@ -12,7 +12,6 @@ export default class Pokemon {
     get Template() {
 
         return /*html*/`
-                <div class="row justify-content-between align-items-center bg-info py-3">
                     <div class="col-5">
                         <img class="img-fluid" src="${this.img}" alt="">
                     </div>
@@ -30,7 +29,6 @@ export default class Pokemon {
                         ${this.Button}
                         </div>
                     </div>
-                </div>
         `
     }
 
