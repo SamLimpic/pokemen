@@ -3,7 +3,12 @@ import Pokemon from "../Models/Pokemon.js"
 import { sandboxApi } from "./AxiosService.js"
 
 class MyPCService {
+    wildGrass(id) {
+        let encounter = ProxyState.myPC.find(pokemon => pokemon.id === id)
+        ProxyState.encounter = encounter
+    }
     async release() {
+        debugger
         await sandboxApi.delete(ProxyState.encounter.id)
         ProxyState.myPC = ProxyState.myPC.filter(pokemon => pokemon.id !== ProxyState.encounter.id)
         ProxyState.encounter = null

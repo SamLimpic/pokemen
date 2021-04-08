@@ -4,7 +4,7 @@ import { pokedexApi } from "./AxiosService.js"
 
 class PokedexService {
 
-    async encounter(name) {
+    async getPokemon(name) {
         let res = await pokedexApi.get(name)
         ProxyState.encounter = new Pokemon(res.data)
     }

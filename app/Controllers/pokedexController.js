@@ -7,7 +7,7 @@ function _draw() {
   let pokedex = ProxyState.pokedex
   let template = ''
   pokedex.forEach(pokemon => {
-    template += `<li class="action hover-action" onclick="app.pokedexController.encounter('${pokemon.name}')"><h5>${pokemon.name.toUpperCase()}<h5></li>`
+    template += `<li class="action hover-action" onclick="app.pokedexController.getPokemon('${pokemon.name}')"><h5>${pokemon.name.toUpperCase()}<h5></li>`
   })
   document.getElementById("pokedex").innerHTML = template
 }
@@ -34,9 +34,9 @@ export default class PokedexController {
     }
   }
 
-  async encounter(name) {
+  async getPokemon(name) {
     try {
-      await pokedexService.encounter(name)
+      await pokedexService.getPokemon(name)
     } catch (error) {
       console.error(error)
     }

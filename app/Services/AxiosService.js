@@ -6,6 +6,6 @@ export const pokedexApi = axios.create({
 
 // @ts-ignore
 export const sandboxApi = axios.create({
-    baseURL: 'https://bcw-sandbox.herokuapp.com/api/Bill/pokemon',
+    baseURL: 'https://bcw-sandbox.herokuapp.com/api/samwise/pokemon',
     timeout: 5000
 })

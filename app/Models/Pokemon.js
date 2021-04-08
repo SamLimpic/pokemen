@@ -12,11 +12,11 @@ export default class Pokemon {
     get Template() {
 
         return /*html*/`
-                <div class="row justify-content-around align-items-center bg-info">
-                    <div class="col-8">
+                <div class="row justify-content-between align-items-center bg-info py-3">
+                    <div class="col-5">
                         <img class="img-fluid" src="${this.img}" alt="">
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <div>
                             <h2><u>${this.name.toUpperCase()}</u></h2>
                             <h4>Primary: <strong>${this.types[0].type.name.toUpperCase()}</strong></h4>
@@ -24,13 +24,6 @@ export default class Pokemon {
                             <div class="pl-3">
                                 <h5>Height: <strong>${this.height}</strong></h5>
                                 <h5>Weight: <strong>${this.weight}</strong></h5>
-                                <div class="pl-3">
-                                    <h6>Health: <strong>${this.stats[0]['base_stat']}</strong></h6>
-                                    <h6>Attack: <strong>${this.stats[1]['base_stat']}</strong></h6>
-                                    <h6>Defense: <strong>${this.stats[2]['base_stat']}</strong></h6>
-                                    <h6>Special: <strong>${this.stats[3]['base_stat']}</strong></h6>
-                                    <h6>Speed: <strong>${this.stats[5]['base_stat']}</strong></h6>
-                                </div>
                             </div>
                         </div>
                         <div class="row justify-content-center">
