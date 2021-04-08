@@ -10695,4 +10695,39 @@ main {
   flex-grow: 1;
 }
 
+.action {
+  cursor: pointer;
+}
+
+li {
+  line-height: 1.5em;
+  list-style: none;
+}
+li:hover {
+  background-color: #00968d;
+  color: #f8f9fa;
+}
+
+.locked-scroll {
+  height: 25vh;
+  overflow-y: scroll;
+}
+
+.locked-scroll::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+.locked-scroll::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.locked-scroll::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.poke-card {
+  height: 50vh;
+}
+
 /*# sourceMappingURL=main.css.map */
