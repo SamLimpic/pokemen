@@ -38,20 +38,22 @@
                 <div class="row justify-content-around align-items-center bg-info my-3">
                     <div class="col-12 p-3">
                         <h3 class="text-center text-dark">Pokedex</h3>
-                        <div class="locked-scroll pb-5 my-2">
+                        <div class="locked-scroll text-center pb-5 my-2">
+                            <button class="btn btn-success mt-1 mb-2" onclick="app.pokedexController.tallGrass()">TALL
+                                GRASS</button>
                             <!-- POKEDEX DRAW -->
-                            <ul id="pokedex" class="pl-3"></ul>
+                            <ul id="pokedex" class="pl-3 text-left"></ul>
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-around align-items-center bg-info my-3">
                     <div class="col-12 p-3">
                         <h3 class="text-center text-dark">My PC</h3>
-                        <div class="locked-scroll pb-5 my-2">
-                            <!-- MY PC DRAW -->
-                            <ul id="my-pc" class="pl-3"></ul>
-                            <button class="btn btn-danger ml-4" onclick="app.myPCController.releaseAll()">
+                        <div class="locked-scroll text-center pb-5 my-2">
+                            <button class="btn btn-danger mt-1 mb-2" onclick="app.myPCController.releaseAll()">
                                 RELEASE ALL</button>
+                            <!-- MY PC DRAW -->
+                            <ul id="my-pc" class="pl-3 text-left"></ul>
                         </div>
                     </div>
                 </div>

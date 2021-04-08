@@ -17,7 +17,8 @@ class MyPCService {
             ProxyState.team = [ProxyState.encounter, ...ProxyState.team.slice(-1)]
         }
     }
-    wildGrass(id) {
+
+    encounter(id) {
         let encounter = ProxyState.myPC.find(pokemon => pokemon.id === id)
         ProxyState.encounter = encounter
     }

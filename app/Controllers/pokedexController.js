@@ -42,4 +42,8 @@ export default class PokedexController {
     }
   }
 
+  tallGrass() {
+    pokedexService.tallGrass()
+  }
+
 }
