@@ -13,26 +13,32 @@ function _draw() {
 }
 
 function _drawTeam() {
-  let team = ProxyState.team
   let template = ''
-  team.forEach(pokemon => {
+  ProxyState.team ? ProxyState.team.forEach(pokemon => {
     template += `<div class="col-2 p-1">
                       <div class="bg-transparent py-2">
                           <button class="btn btn-light" disabled><strong>${pokemon.name.toUpperCase()}</strong></button>
-                          <img class="img-fluid" src="${pokemon.img}" alt="">
+                          <img class="img-fluid team-card" src="${pokemon.img}" alt="">
                       </div>
                   </div>`
   })
+    : template = `
+      <div class="col-2 p-1">
+          <div class="bg-transparent py-2" style="opacity: 0">
+              <button class="btn btn-light" disabled><strong>POKEMON</strong></button>
+              <img class="img-fluid team-card" src="//placehold.it/130x130" alt="">
+          </div>
+      </div>
+    `
   document.getElementById("team").innerHTML = template
-
 }
+
 //Public
 export default class MyPCController {
   constructor() {
     ProxyState.on("myPC", _draw)
     ProxyState.on("team", _drawTeam)
 
-    _drawTeam()
     this.getMyPC()
   }
 

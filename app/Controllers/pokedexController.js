@@ -13,7 +13,11 @@ function _draw() {
 }
 
 function _drawEncounter() {
-  document.getElementById('encounter').innerHTML = ProxyState.encounter ? ProxyState.encounter.Template : ""
+  document.getElementById('encounter').innerHTML = ProxyState.encounter ? ProxyState.encounter.Template : `
+      <div class="col-5">
+          <img class="img-fluid" style="opacity: 0" src="//placehold.it/500x500" alt="">
+      </div>
+  `
 }
 
 //Public

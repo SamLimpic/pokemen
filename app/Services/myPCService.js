@@ -8,13 +8,17 @@ class MyPCService {
             sandboxApi.delete(pokemon.id)
         })
         ProxyState.myPC = []
-        ProxyState.team = []
+        ProxyState.team = null
     }
+
     team() {
-        if (ProxyState.team.length <= 6) {
+        if (!ProxyState.team) {
+            ProxyState.team = []
+        }
+        if (ProxyState.team.length <= 5) {
             ProxyState.team = [ProxyState.encounter, ...ProxyState.team]
         } else {
-            ProxyState.team = [ProxyState.encounter, ...ProxyState.team.slice(-1)]
+            ProxyState.team = [ProxyState.encounter, ...ProxyState.team].slice(0, 6)
         }
     }
 

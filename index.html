@@ -28,16 +28,26 @@
         <div class="row justify-content-around align-items-center">
             <!-- ENCOUNTER DRAW -->
             <div class="col-md-9">
-                <div class="poke-card py-3">
-                    <div id="encounter" class="row justify-content-between align-items-center bg-info"></div>
+                <div class="poke-card">
+                    <div id="encounter" class="row justify-content-between align-items-center bg-info">
+                        <div class="col-5">
+                            <img class="img-fluid" style="opacity: 0" src="//placehold.it/500x500" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div id="team" class="row text-center justify-content-center mt-3 bg-info">
+                    <div class="col-2 p-1">
+                        <div class="bg-transparent py-2" style="opacity: 0">
+                            <button class="btn btn-light" disabled><strong>POKEMON</strong></button>
+                            <img class="img-fluid team-card" src="//placehold.it/130x130" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 p-5">
+            <div class="col-md-3 p-5 ">
                 <div class="row justify-content-around align-items-center bg-info my-3">
                     <div class="col-12 p-3">
-                        <h3 class="text-center text-dark">Pokedex</h3>
+                        <h3 class="text-center text-dark"><u>Pokedex</u></h3>
                         <div class="locked-scroll text-center pb-5 my-2">
                             <button class="btn btn-success mt-1 mb-2" onclick="app.pokedexController.tallGrass()">TALL
                                 GRASS</button>
@@ -48,7 +58,7 @@
                 </div>
                 <div class="row justify-content-around align-items-center bg-info my-3">
                     <div class="col-12 p-3">
-                        <h3 class="text-center text-dark">My PC</h3>
+                        <h3 class="text-center text-dark"><u>My PC</u></h3>
                         <div class="locked-scroll text-center pb-5 my-2">
                             <button class="btn btn-danger mt-1 mb-2" onclick="app.myPCController.releaseAll()">
                                 RELEASE ALL</button>
