@@ -3,6 +3,13 @@ import Pokemon from "../Models/Pokemon.js"
 import { sandboxApi } from "./AxiosService.js"
 
 class MyPCService {
+    async releaseAll() {
+        await ProxyState.myPC.forEach(pokemon => {
+            sandboxApi.delete(pokemon.id)
+        })
+        ProxyState.myPC = []
+        ProxyState.team = []
+    }
     team() {
         if (ProxyState.team.length <= 6) {
             ProxyState.team = [ProxyState.encounter, ...ProxyState.team]
@@ -15,7 +22,6 @@ class MyPCService {
         ProxyState.encounter = encounter
     }
     async release() {
-        debugger
         await sandboxApi.delete(ProxyState.encounter.id)
         ProxyState.myPC = ProxyState.myPC.filter(pokemon => pokemon.id !== ProxyState.encounter.id)
         ProxyState.encounter = null

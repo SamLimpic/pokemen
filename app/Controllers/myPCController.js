@@ -17,8 +17,8 @@ function _drawTeam() {
   let template = ''
   team.forEach(pokemon => {
     template += `<div class="col-2 p-1">
-                      <div class="card shadow py-2">
-                          <p><strong>${pokemon.name.toUpperCase()}</strong></p>
+                      <div class="bg-transparent py-2">
+                          <button class="btn btn-light" disabled><strong>${pokemon.name.toUpperCase()}</strong></button>
                           <img class="img-fluid" src="${pokemon.img}" alt="">
                       </div>
                   </div>`
@@ -63,6 +63,14 @@ export default class MyPCController {
   async release() {
     try {
       await myPCService.release()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async releaseAll() {
+    try {
+      await myPCService.releaseAll()
     } catch (error) {
       console.error(error)
     }
