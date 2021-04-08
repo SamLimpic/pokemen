@@ -10,14 +10,29 @@ function _draw() {
     template += `<li class="action hover-action" onclick="app.myPCController.wildGrass('${pokemon.id}')"><h5>${pokemon.name.toUpperCase()}<h5></li>`
   })
   document.getElementById("my-pc").innerHTML = template
-
 }
 
+function _drawTeam() {
+  let team = ProxyState.team
+  let template = ''
+  team.forEach(pokemon => {
+    template += `<div class="col-2 p-1">
+                      <div class="card shadow py-2">
+                          <p><strong>${pokemon.name.toUpperCase()}</strong></p>
+                          <img class="img-fluid" src="${pokemon.img}" alt="">
+                      </div>
+                  </div>`
+  })
+  document.getElementById("team").innerHTML = template
+
+}
 //Public
 export default class MyPCController {
   constructor() {
     ProxyState.on("myPC", _draw)
+    ProxyState.on("team", _drawTeam)
 
+    _drawTeam()
     this.getMyPC()
   }
 
@@ -31,6 +46,10 @@ export default class MyPCController {
 
   wildGrass(id) {
     myPCService.wildGrass(id)
+  }
+
+  team() {
+    myPCService.team()
   }
 
   async catch() {

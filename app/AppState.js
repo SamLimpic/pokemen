@@ -10,6 +10,8 @@ class AppState extends EventEmitter {
 
   /** @type {Pokemon} */
   encounter = null
+  /** @type {Pokemon[]} */
+  team = []
 
 }
 
