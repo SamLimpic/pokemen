@@ -13,7 +13,7 @@ export default class Pokemon {
 
         return /*html*/`
                     <div class="col-5">
-                        <img class="img-fluid" src="${this.img}" alt="">
+                        <img class="img-fluid ml-5" src="${this.img}" alt="">
                     </div>
                     <div class="col-5">
                         <div>

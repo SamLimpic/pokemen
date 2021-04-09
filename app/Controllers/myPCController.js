@@ -1,7 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import { myPCService } from "../Services/myPCService.js"
 
-
 //Private
 function _draw() {
   let myPC = ProxyState.myPC

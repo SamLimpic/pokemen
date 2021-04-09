@@ -10688,7 +10688,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f2f2f2;
+  background-color: #414141;
 }
 
 main {
@@ -10733,6 +10733,13 @@ li:hover {
 
 .poke-card {
   height: 50vh;
+}
+
+.screen-border {
+  border: 10px;
+  border-color: #c9fffc;
+  border-style: ridge;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=main.css.map */

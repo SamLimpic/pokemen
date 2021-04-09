@@ -26,17 +26,20 @@ class MyPCService {
         let encounter = ProxyState.myPC.find(pokemon => pokemon.id === id)
         ProxyState.encounter = encounter
     }
+
     async release() {
         await sandboxApi.delete(ProxyState.encounter.id)
         ProxyState.myPC = ProxyState.myPC.filter(pokemon => pokemon.id !== ProxyState.encounter.id)
         ProxyState.encounter = null
     }
+
     async catch() {
         let res = await sandboxApi.post('', ProxyState.encounter)
         ProxyState.myPC = [...ProxyState.myPC, new Pokemon(res.data)]
         this.team()
         ProxyState.encounter = null
     }
+
     async getMyPC() {
         let res = await sandboxApi.get()
         ProxyState.myPC = res.data.map(pokemon => new Pokemon(pokemon))
